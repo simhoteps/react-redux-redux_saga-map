@@ -56,6 +56,10 @@ const Home = () => {
             {" "}
             Coronavirus (COVID-19) Dashboard{" "}
           </Typography>
+          <Typography variant="subtitle1">
+            {" "}
+            For the results, click the map.
+          </Typography>
           <WorldMap />
 
           <Typography>
