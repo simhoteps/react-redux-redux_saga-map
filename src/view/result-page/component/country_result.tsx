@@ -1,16 +1,7 @@
-import { Box, BoxProps, styled, Typography } from "@mui/material";
-import { Size, useWindowSize } from "core/custom-hooks/use_window_size";
-import { useTheme } from "core/init/themes/theme_context";
 import React from "react";
-
-interface dataProps {
-  confirmed: number;
-  deaths: number;
-  lastChecked: string;
-  lastReported: string;
-  location: string;
-  recovered: null;
-}
+import { Box, BoxProps, styled, Typography } from "@mui/material";
+import { useTheme } from "core/init/themes/theme_context";
+import { IPost } from "models/IPost";
 
 const ContainerBox = styled(Box)<BoxProps>(({ theme }) => ({
   display: "flex",
@@ -57,10 +48,9 @@ const RowText = ({
   );
 };
 
-const CountryResult = ({ data }: { data: dataProps }) => {
+const CountryResult = ({ data }: { data: IPost }) => {
   const { theme } = useTheme();
-  const size: Size = useWindowSize();
-  const windowHeight = size?.height!;
+
   return (
     <ContainerBox>
       <Typography

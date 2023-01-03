@@ -1,16 +1,8 @@
+import { IPost } from "models/IPost";
 import React, { useState, useEffect } from "react";
 
-interface dataProps {
-  confirmed: number;
-  deaths: number;
-  lastChecked: string;
-  lastReported: string;
-  location: string;
-  recovered: null;
-}
-
 const useFetch = (param?: any) => {
-  const [data, setData] = useState<dataProps[]>([]);
+  const [data, setData] = useState<IPost[]>([]);
   const [error, setError] = useState<any>();
   const [isLoading, setIsLoading] = useState(true);
 

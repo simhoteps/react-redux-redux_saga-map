@@ -55,6 +55,7 @@ const BackButton = styled(Button)<ButtonProps>(({ theme }) => ({
   width: "90px",
   height: "36px",
   padding: "0px",
+  marginBottom: "12px",
   color: theme.palette.text.disabled,
   "&:hover": {
     backgroundColor: "transparent",
@@ -100,7 +101,6 @@ const ResultPage = () => {
                   width={"100%"}
                   fontWeight={700}
                   variant="h5"
-                  marginTop={"36px"}
                 >
                   Prevent COVID-19: How to Protect Yourself from the Coronavirus
                 </Typography>
