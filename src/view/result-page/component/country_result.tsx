@@ -56,7 +56,7 @@ const CountryResult = ({ data }: { data: IPost }) => {
       <Typography
         sx={{
           color: "#c32a2a",
-          typography: theme.typography.h3,
+          typography: theme.typography.h4,
           fontWeight: 700,
           marginBottom: "24px",
         }}

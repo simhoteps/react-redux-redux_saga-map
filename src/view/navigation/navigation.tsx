@@ -10,15 +10,16 @@ const Contents = styled(Box)<BoxProps>(({ theme }) => ({
   overflow: "hidden",
 }));
 
-const Navigation = ({ content }: { content: React.ReactNode }) => {
+const Navigation = ({ content }: { content?: React.ReactNode }) => {
   const { theme } = useTheme();
   const size: Size = useWindowSize();
   const windowHeight = size?.height!;
   const windowWidth = size?.width!;
 
   return (
-    <Box
-      sx={{
+    <div
+      data-testid="navigationContainer"
+      style={{
         display: "flex",
         overflowX: "hidden",
         backgroundColor: "#36546210",
@@ -26,6 +27,7 @@ const Navigation = ({ content }: { content: React.ReactNode }) => {
     >
       <Header />
       <Contents
+        data-testid="navigationContent"
         sx={{
           width: windowWidth,
           height: `${windowHeight}-40px`,
@@ -34,7 +36,7 @@ const Navigation = ({ content }: { content: React.ReactNode }) => {
       >
         {content}
       </Contents>
-    </Box>
+    </div>
   );
 };
 

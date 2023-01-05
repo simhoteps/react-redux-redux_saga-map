@@ -4,6 +4,7 @@ import { Box, CircularProgress } from "@mui/material";
 const PreLoader = () => {
   return (
     <Box
+      data-testid="errorPreLoader"
       sx={{
         display: "flex",
         alignItems: "center",

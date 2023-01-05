@@ -9,11 +9,6 @@ import topo from "./world-50.json";
 import StyledTooltip from "core/components/tooltip/tooltip";
 import { useNavigate } from "react-router";
 
-const mapStyles = {
-  width: "70%",
-  height: "auto",
-};
-
 export default function WorldMap() {
   const navigate = useNavigate();
 
@@ -24,16 +19,15 @@ export default function WorldMap() {
         height={500}
         //projection={"geoOrthographic"}
         projectionConfig={{ scale: 175 }}
-        style={mapStyles}
       >
         <ZoomableGroup /*  center={[2, 0]} */>
           <Geographies geography={topo}>
             {({ geographies }) =>
               geographies.map((geography) => (
-                <StyledTooltip title={geography.properties.NAME}>
+                <StyledTooltip title={geography.properties.NAME_LONG}>
                   <Geography
                     onClick={() => {
-                      navigate("/home/map/" + geography.properties.NAME);
+                      navigate("/home/map/" + geography.propertuies.NAME);
                     }}
                     key={geography.id}
                     geography={geography}

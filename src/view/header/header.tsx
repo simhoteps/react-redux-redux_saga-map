@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   AppBar,
   Box,
@@ -7,35 +8,25 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
 import { useTheme } from "core/init/themes/theme_context";
 import ThemeSwitcher from "core/init/themes/theme_switcher";
 
 const ResponsiveBox = styled(Box)<BoxProps>(({ theme }) => ({
-  // maxWidth: "2560px",
-
   display: "flex",
   justifyContent: "flex-start",
   alignItems: "center",
   paddingLeft: "36px",
   width: "100%",
-  /*   [theme.breakpoints.down("sm")]: { width: "373px" },
-  [theme.breakpoints.between("sm", "md")]: { width: "779px" },
-  [theme.breakpoints.between("md", "lg")]: { width: "1183px" },
-  [theme.breakpoints.between("lg", "xl")]: { width: "1588px" },
-  [theme.breakpoints.up("xl")]: { width: "1993px" }, */
 }));
 
 const Header = () => {
-  const navigate = useNavigate();
   const { theme } = useTheme();
-  const refreshPage = () => {
-    navigate("/");
-  };
+  const navigate = useNavigate();
 
   return (
     <>
       <AppBar
+        data-testid="headerAppBar"
         sx={{
           backgroundColor: theme.palette.primary.dark,
           color: theme.palette.text.secondary,
@@ -57,15 +48,15 @@ const Header = () => {
         >
           <ResponsiveBox>
             <Typography
+              data-testid="titleName"
               onClick={() => {
-                refreshPage();
+                navigate("/");
               }}
               sx={{ cursor: "pointer" }}
               color="common.white"
               variant="body1"
             >
               Coronavirus (COVID-19) Dashboard
-              {/*   WHO Coronavirus (COVID-19) Dashboard */}
             </Typography>
 
             <Box
@@ -75,7 +66,9 @@ const Header = () => {
                 alignItems: "center",
                 columnGap: "16px",
               }}
-            ></Box>
+            >
+              {/*   <ThemeSwitcher /> */}
+            </Box>
           </ResponsiveBox>
         </Toolbar>
       </AppBar>
