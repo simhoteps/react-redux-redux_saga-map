@@ -1,16 +1,6 @@
-import {
-  Box,
-  BoxProps,
-  CircularProgress,
-  styled,
-  Typography,
-} from "@mui/material";
-import useFetch from "api/useFeach";
+import { Box, BoxProps, styled, Typography } from "@mui/material";
 import { IPost } from "models/IPost";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchPostsRequest } from "store/actions/postsActions/postsActions";
-import { RootState } from "store/reducers/rootReducer";
+import { GlobalHookFn } from "store/redux-hook";
 import PreLoader from "view/pre-loader/pre_loader";
 import WorldMap from "./components/map/map";
 
@@ -26,26 +16,22 @@ const ContainerBox = styled(Box)<BoxProps>(({ theme }) => ({
   minHeight: "500px",
   [theme.breakpoints.down("sm")]: {
     padding: "36px 18px",
+    justifyContent: " flex-start",
+    alignItems: "center",
+    gap: "24px",
   },
 }));
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const { pending, posts, error } = useSelector(
-    (state: RootState) => state.posts
-  );
+  const { pending, posts, error } = GlobalHookFn("Global");
   const data: IPost = posts;
 
-  useEffect(() => {
-    dispatch(fetchPostsRequest("Global"));
-  }, []);
-
   return (
-    <>
+    <div>
       {pending ? (
         <PreLoader />
       ) : (
-        <ContainerBox>
+        <ContainerBox data-testid="homeContainerBox">
           <Typography
             align="center"
             color={"#c32a2a"}
@@ -75,7 +61,7 @@ const Home = () => {
           </Typography>
         </ContainerBox>
       )}
-    </>
+    </div>
   );
 };
 

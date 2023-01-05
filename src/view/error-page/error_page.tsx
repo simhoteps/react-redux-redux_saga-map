@@ -8,7 +8,6 @@ const ResponsiveBox = styled(Box)<BoxProps>(({ theme }) => ({
   alignItems: "center",
   height: "100vh",
   width: "100%",
-
   boxSizing: "border-box",
   backgroundColor: "#c32a2a25",
 }));
@@ -25,13 +24,14 @@ const ErrorPage = ({ message }: { message?: string }) => {
         "
       />
       <Typography
+        data-testid="errorMessage"
         fontWeight={700}
         textTransform="uppercase"
         color={"#F03D5F"}
         maxWidth="500px"
         variant="h6"
       >
-        {message}
+        {message ? message : "Oops , something went wrong"}
       </Typography>
     </ResponsiveBox>
   );

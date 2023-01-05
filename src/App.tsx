@@ -8,6 +8,7 @@ import { useTheme } from "core/init/themes/theme_context";
 import LoginPage from "view/login-page/login_page";
 import PreLoader from "view/pre-loader/pre_loader";
 import Navigation from "view/navigation/navigation";
+import ErrorPage from "view/error-page/error_page";
 
 const Layout = () => {
   return (

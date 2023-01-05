@@ -1,11 +1,8 @@
-import { styled, BoxProps, Box, Typography, Stack } from "@mui/material";
-import useFetch from "api/useFeach";
-import { IPost } from "models/IPost";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { styled, BoxProps, Box, Typography, Stack } from "@mui/material";
+import { IPost } from "models/IPost";
 import { useNavigate } from "react-router-dom";
-import { fetchPostsRequest } from "store/actions/postsActions/postsActions";
-import { RootState } from "store/reducers/rootReducer";
+import { GlobalHookFn } from "store/redux-hook";
 import ErrorPage from "view/error-page/error_page";
 import PreLoader from "view/pre-loader/pre_loader";
 import "./styled/login_page_styles.css";
@@ -24,11 +21,6 @@ const ResponsiveBox = styled(Box)<BoxProps>(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     alignItems: "flex-start",
   },
-  /*   [theme.breakpoints.down("sm")]: { width: "373px" },
-  [theme.breakpoints.between("sm", "md")]: { width: "779px" },
-  [theme.breakpoints.between("md", "lg")]: { width: "1183px" },
-  [theme.breakpoints.between("lg", "xl")]: { width: "1588px" },
-  [theme.breakpoints.up("xl")]: { width: "1993px" }, */
 }));
 
 const ImageBox = styled(Box)<BoxProps>(({ theme }) => ({
@@ -38,15 +30,8 @@ const ImageBox = styled(Box)<BoxProps>(({ theme }) => ({
 const LoginPage = () => {
   const navigate = useNavigate();
 
-  const dispatch = useDispatch();
-  const { pending, posts, error } = useSelector(
-    (state: RootState) => state.posts
-  );
+  const { pending, posts, error } = GlobalHookFn("Global");
   const data: IPost = posts;
-
-  useEffect(() => {
-    dispatch(fetchPostsRequest("Global"));
-  }, []);
 
   return (
     <>
