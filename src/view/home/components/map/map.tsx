@@ -23,38 +23,41 @@ export default function WorldMap() {
         <ZoomableGroup /*  center={[2, 0]} */>
           <Geographies geography={topo}>
             {({ geographies }) =>
-              geographies.map((geography) => (
-                <StyledTooltip title={geography.properties.NAME_LONG}>
-                  <Geography
-                    onClick={() => {
-                      navigate("/home/map/" + geography.propertuies.NAME);
-                    }}
-                    key={geography.id}
-                    geography={geography}
-                    style={{
-                      //border: "1px solid #424242",
-                      default: {
-                        fill: "#dedede",
-                        stroke: "#4E92A0",
-                        strokeWidth: 0.1,
-                        outline: "none",
-                      },
-                      hover: {
-                        fill: "#c32a2a70",
-                        stroke: "#c32a2a80",
-                        strokeWidth: 0.75,
-                        outline: "none",
-                      },
-                      pressed: {
-                        fill: "#FFE255",
-                        stroke: "#607D8B",
-                        strokeWidth: 0.75,
-                        outline: "none",
-                      },
-                    }}
-                  />
-                </StyledTooltip>
-              ))
+              geographies.map((geography) => {
+                const coutryName: string = geography.properties.NAME_LONG;
+                return (
+                  <StyledTooltip title={coutryName}>
+                    <Geography
+                      onClick={() => {
+                        navigate("/home/map/" + coutryName);
+                      }}
+                      key={geography.id}
+                      geography={geography}
+                      style={{
+                        //border: "1px solid #424242",
+                        default: {
+                          fill: "#dedede",
+                          stroke: "#4E92A0",
+                          strokeWidth: 0.1,
+                          outline: "none",
+                        },
+                        hover: {
+                          fill: "#c32a2a70",
+                          stroke: "#c32a2a80",
+                          strokeWidth: 0.75,
+                          outline: "none",
+                        },
+                        pressed: {
+                          fill: "#FFE255",
+                          stroke: "#607D8B",
+                          strokeWidth: 0.75,
+                          outline: "none",
+                        },
+                      }}
+                    />
+                  </StyledTooltip>
+                );
+              })
             }
           </Geographies>
         </ZoomableGroup>
