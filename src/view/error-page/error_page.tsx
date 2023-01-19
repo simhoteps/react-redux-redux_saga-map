@@ -12,7 +12,7 @@ const ResponsiveBox = styled(Box)<BoxProps>(({ theme }) => ({
   backgroundColor: "#c32a2a25",
 }));
 
-const ErrorPage = ({ message }: { message?: string }) => {
+const ErrorPage = () => {
   return (
     <ResponsiveBox>
       <img
@@ -20,8 +20,7 @@ const ErrorPage = ({ message }: { message?: string }) => {
           height: "auto",
           width: "60%",
         }}
-        src="http://localhost:3000/error_page.png
-        "
+        src={`${window.location.origin}/error_page.png`}
       />
       <Typography
         data-testid="errorMessage"
@@ -31,7 +30,7 @@ const ErrorPage = ({ message }: { message?: string }) => {
         maxWidth="500px"
         variant="h6"
       >
-        {message ? message : "Oops , something went wrong"}
+        {"Oops , something went wrong"}
       </Typography>
     </ResponsiveBox>
   );

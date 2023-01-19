@@ -23,8 +23,7 @@ const ContainerBox = styled(Box)<BoxProps>(({ theme }) => ({
 }));
 
 const Home = () => {
-  const { pending, posts, error } = GlobalHookFn("Global");
-  const data: IPost = posts;
+  const { pending, data, error } = GlobalHookFn("Global");
 
   return (
     <div>

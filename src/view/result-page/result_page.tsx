@@ -68,8 +68,7 @@ const ResultPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const { pending, posts, error } = GlobalHookFn(id);
-  const data: IPost = posts;
+  const { pending, data, error } = GlobalHookFn(id);
 
   return (
     <>
@@ -101,7 +100,7 @@ const ResultPage = () => {
 
               <img
                 style={{ maxWidth: "600px", width: "100%" }}
-                src={`http://localhost:3000/coronavirus_global.png`}
+                src={`${window.location.origin}/coronavirus_global.png`}
               />
 
               <Typography variant="body1">
