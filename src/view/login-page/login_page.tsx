@@ -30,8 +30,7 @@ const ImageBox = styled(Box)<BoxProps>(({ theme }) => ({
 const LoginPage = () => {
   const navigate = useNavigate();
 
-  const { pending, posts, error } = GlobalHookFn("Global");
-  const data: IPost = posts;
+  const { pending, data, error } = GlobalHookFn("Global");
 
   return (
     <>
