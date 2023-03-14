@@ -22,7 +22,7 @@ $ npm install
 Run the app
 $ npm start
 
-Techs
+# Techs </br>
 This software uses the following open source packages:
 
 React </br>
