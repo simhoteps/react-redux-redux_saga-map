@@ -6,7 +6,11 @@ Product comparison project was built using React + Typescript + Redux + Redux-Sa
 
 Life code : https://coronavirusmapreact.netlify.app/
 
+```
+Go into the repository
+$ cd react-redux-redux_saga-map
 
+```
 # How To Use
 To clone and run this application, you'll need Git, Node.js and npm
 
