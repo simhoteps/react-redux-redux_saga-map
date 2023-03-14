@@ -26,9 +26,10 @@ $ npm start
 This software uses the following open source packages:
 <ul>
 
-<li>  <link rel="React" href="https://beta.reactjs.org/" />   </li> 
-<li> TypeScript </li> 
-<li> Redux </li> 
-<li> Redux-saga </li> 
-<li> Sass </li> 
+<li> <a href="https://beta.reactjs.org/">React</a></li> 
+<li> <a href="https://www.typescriptlang.org/">TypeScript</a>  </li> 
+<li> <a href="https://react-redux.js.org/">React-Redux</a>  </li>
+<li> <a href="https://redux-saga.js.org/ ">Redux-Saga</a>  </li>
+ <li> <a href="https://sass-lang.com/">Sass</a>  </li>
+
 </ul>
