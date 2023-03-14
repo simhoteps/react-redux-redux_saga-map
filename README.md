@@ -25,7 +25,8 @@ $ npm start
 # Techs </br>
 This software uses the following open source packages:
 <ul>
-<li> React </li> 
+
+<li>  <link rel="React" href="https://beta.reactjs.org/" />   </li> 
 <li> TypeScript </li> 
 <li> Redux </li> 
 <li> Redux-saga </li> 
