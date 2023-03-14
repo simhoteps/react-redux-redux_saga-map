@@ -25,8 +25,8 @@ $ npm start
 Techs
 This software uses the following open source packages:
 
-React
-TypeScript
-Redux
-Redux-saga
-Sass
+React </br>
+TypeScript </br>
+Redux </br>
+Redux-saga </br>
+Sass </br>
