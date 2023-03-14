@@ -1,16 +1,13 @@
 React Corona Virus Map Project
 
 This project was bootstrapped with Create React App.
-
-Product comparison project was built using React + Typescript + Redux + Redux-Saga + Material UI 
-
 Life code : https://coronavirusmapreact.netlify.app/
 
 
 # How To Use
 To clone and run this application, you'll need Git, Node.js and npm
-```
 
+```
 Clone this repository
 $ git clone https://github.com/simhoteps/react-redux-redux_saga-map
 
@@ -22,7 +19,6 @@ $ npm install
 
 Run the app
 $ npm start
-
 ```
 
 # Techs </br>
@@ -33,6 +29,6 @@ This software uses the following open source packages:
 <li> <a href="https://www.typescriptlang.org/">TypeScript</a>  </li> 
 <li> <a href="https://react-redux.js.org/">React-Redux</a>  </li>
 <li> <a href="https://redux-saga.js.org/ ">Redux-Saga</a>  </li>
+ <li> <a href="https://mui.com/material-ui/getting-started/installation/">Material UI </a>  </li>
  <li> <a href="https://sass-lang.com/">Sass</a>  </li>
-
 </ul>
