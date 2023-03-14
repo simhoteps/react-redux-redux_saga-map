@@ -8,6 +8,7 @@ Life code : https://coronavirusmapreact.netlify.app/
 To clone and run this application, you'll need Git, Node.js and npm
 
 ```
+
 Clone this repository
 $ git clone https://github.com/simhoteps/react-redux-redux_saga-map
 
@@ -19,6 +20,7 @@ $ npm install
 
 Run the app
 $ npm start
+
 ```
 
 # Techs </br>
