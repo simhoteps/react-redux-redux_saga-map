@@ -1,7 +1,7 @@
 React Corona Virus Map Project
 
 This project was bootstrapped with Create React App.
-Life code : https://coronavirusmapreact.netlify.app/
+
 
 
 # How To Use
